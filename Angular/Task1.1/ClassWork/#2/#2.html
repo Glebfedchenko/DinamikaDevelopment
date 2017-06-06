@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <link rel="" type="" href="libs/bootstrap.css">
+    <script src="libs/angular.js"></script>
+    <script src="libs/app.js"></script>
+</head>
+
+<body ng-controller="mainCtrl">
+    <div>
+        <h2>Please Type Your Word Here</h2>
+        <input ng-model="text" class="form-control">
+        <button class="btn btn-primary" ng-click="addText()">Submit</button>
+        <h2>Your typed: {{withText}}</h2>
+    </div>
+</body>
+
+</html>

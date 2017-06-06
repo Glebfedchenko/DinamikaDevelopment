@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <link rel="stylesheet" type="" href="libs/bootstrap.css">
+    <script src="libs/angular.js"></script>
+    <script src="libs/app.js"></script>
+</head>
+
+<body ng-controller="mainCtrl">
+    <div class="container">
+
+        <h3>ToDo List</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Completed</th>
+                </tr>
+            </thead>
+            <tr ng-repeat="t in tasks">
+                <td>{{t.name}}</td>
+                <td>{{t.descr}}</td>
+                <td>{{t.date | date:"dd/MM/yy"}}</td>
+                <td><input type="checkbox" ng-model="t.completed"></td>
+                <td>{{showCompleted(t.completed)}}</td>
+                <td>
+                    <button class="btn btn-danger" ng-click="editTask($index)">Edit Task</button>
+                </td>
+            </tr>
+        </table>
+
+        <h4><label for="Name">Name</label></h4>
+        <div class="input-group input-group-lg">
+            <input type="text" ng-model="newName" class="form-control" id="Name">
+        </div>
+        <h4><label for="DueDate">Due Date</label></h4>
+        <div class="input-group input-group-lg">
+            <input type="date" ng-model="newDate" class="form-control" id="DueDate">
+        </div>
+
+        <h4><label for="Description">Description</label></h4>
+        <div class="input-group input-group-lg">
+            <textarea class="form-control" ng-model="newDescr" name="Description" id="Description" cols="30" rows="3" aria-describedby="Description"></textarea>
+        </div>
+
+        <h4><label for="isCompleted">Completed</label></h4>
+        <div class="input-group input-group-lg">
+            <input type="checkbox" ng-model="newCompleted">
+        </div>
+
+        <div>
+            <div class="btn-group btn-group-lg" role="group">
+                <button type="button" class="btn btn-default" ng-click="addTask()">Add Task</button>
+                <button ng-if="editMode" class="btn btn-success" ng-click="clickSave()">Save Task</button>
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
