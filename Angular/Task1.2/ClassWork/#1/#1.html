@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <link rel="stylesheet" type="" href="libs/bootstrap.css">
+    <script src="libs/angular.js"></script>
+    <script src="libs/app.js"></script>
+</head>
+
+<body ng-controller="mainCtrl">
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Items Name</th>
+                    <th>Items Price</th>
+                    <th>Items Category</th>
+                    <th>Items Count</th>
+                    <th>Items Tax</th>
+                    <th>Items Expiration</th>
+                </tr>
+            </thead>
+            <tr ng-repeat="item in items">
+                <td>{{item.name}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.category}}</td>
+                <td>{{item.count}}</td>
+                <td>{{item.tax}}</td>
+                <td>{{item.expiration}}</td>
+            </tr>
+        </table>
+
+    
+</body>
+
+</html>
