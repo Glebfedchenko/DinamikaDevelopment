@@ -8,36 +8,86 @@
 </head>
 
 <body ng-controller="mainCtrl">
-    <div>
-        <div class="container">
-            <form>
-                <label><input type="radio" value="first" ng-model="questions"> Click For 1st Question</label>
-                <label><input type="radio" value="second" ng-model="questions"> Click For 2nd Question</label>
-                <label><input type="radio" value="third" ng-model="questions"> Click For 3rd Question</label>
-                <label><input type="radio" value="fourth" ng-model="questions"> Click For 4th Question</label>
-                <label><input type="radio" value="fifth" ng-model="questions"> Click For 5th Question</label>
+    <div class="container">
+        <form>
+            <form name="myForm">
+                <label>
+                <input type="radio" ng-model="mode.name" value="1">
+                First Question
+            </label><br/>
+                <label>
+                <input type="radio" ng-model="mode.name" value="2">
+                Second Question
+            </label><br/>
+                <label>
+                <input type="radio" ng-model="mode.name" value="3">
+                Third Question
+            </label><br/>
+                <label>
+                <input type="radio" ng-model="mode.name" value="4">
+                Fourth Question
+            </label><br/>
+                <label>
+                <input type="radio" ng-model="mode.name" value="5">
+                Firth Question
+            </label><br/>
             </form>
-            <hr>
-            <div ng-switch="questions" id="wrapper">
-                <div ng-switch-when="first">
-                    <h2> First Question</h2>
-                </div>
-                <div ng-switch-when="second">
-                    <h2>Second Question </h2>
-                </div>
-                <div ng-switch-when='third'>
-                    <h2> Third Question</h2>
-                </div>
-                  <div ng-switch-when="fourth">
-                    <h2> Fourth Question</h2>
-                </div>
-                  <div ng-switch-when="fifth">
-                    <h2> Fifth Question</h2>
-                </div>
-                  <!--<div ng-switch-default>
-                    <h2> First Question</h2>
-                </div>-->
+        </form>
+        <div ng-switch="mode.name">
+            <div ng-switch-when="1">
+                <h4>What is Javascript?</h4>
+                <input type="radio" ng-click="result1()">Programing language
+                <br>
+                <input type="radio" >Simple Word
+                <br>
+                <input type="radio">Taskbar</button>
+                <br>
+                <input type="radio">Antivirus</button>
             </div>
+            <div ng-switch-when="2">
+                <h4>Who is Donald Trump?</h4>
+                <input type="radio" ng-click="result2()">Businessman
+                <br>
+                <input type="radio" >Brood Lord
+                <br>
+                <input type="radio">USA President</button>
+                <br>
+                <input type="radio">Hacker</button>
+            </div>
+            <div ng-switch-when="3">
+                <h4>UA stands for?</h4>
+                <input type="radio" ng-click="result3()">Ukraine
+                <br>
+                <input type="radio" >Uganda
+                <br>
+                <input type="radio">Uarabey</button>
+                <br>
+                <input type="radio">Uazik</button>
+            </div>
+            <div ng-switch-when="4">
+                <h4>UAH stands for?</h4>
+                <input type="radio">Urugway rupy
+                <br>
+                <input type="radio" ng-click="result4()">UA Hryvna
+                <br>
+                <input type="radio">Ultramarine</button>
+                <br>
+                <input type="radio">USA</button>
+            </div>
+            <div ng-switch-when="5">
+                <h4>Who was the first man on the moon?</h4>
+                <input type="radio" ng-click="result5()">Armstrong
+                <br>
+                <input type="radio" >Kravitz
+                <br>
+                <input type="radio">Geitz</button>
+                <br>
+                <input type="radio">Freud</button>
+            </div>
+            <br>
+            <br> Show Result <input type="checkbox" ng-model="checked" ng-init="checked=false" ng-click="showTotal()"
+            /><br/>
+            <span ng-if="checked">Your Result is: {{total}}/ 5</span>
         </div>
     </div>
 </body>

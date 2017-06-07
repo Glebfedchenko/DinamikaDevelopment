@@ -8,29 +8,28 @@
 </head>
 
 <body ng-controller="mainCtrl">
-    <div class="container">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Items Name</th>
-                    <th>Items Price</th>
-                    <th>Items Category</th>
-                    <th>Items Count</th>
-                    <th>Items Tax</th>
-                    <th>Items Expiration</th>
-                </tr>
-            </thead>
-            <tr ng-repeat="item in items">
-                <td>{{item.name}}</td>
-                <td>{{item.price}}</td>
-                <td>{{item.category}}</td>
-                <td>{{item.count}}</td>
-                <td>{{item.tax}}</td>
-                <td>{{item.expiration}}</td>
+    <table class="table">
+        <thead>
+            <th><label for="cnm">Name</label><input id="cnm" type="checkbox" class="checkbox" ng-click="nameShowTable()"></th>
+            <th><label for="cprc">Price</label><input id="cprc" type="checkbox" class="checkbox" ng-click="priceShowTable()"></th>
+            <th><label for="cctgr">Category</label><input id="cctgr" type="checkbox" class="checkbox" ng-click="categoryShowTable()"></th>
+            <th><label for="ccnt">Count</label><input id="ccnt" type="checkbox" class="checkbox" ng-click="countShowTable()"></th>
+            <th><label for="ctx">Tax</label><input id="ctx" type="checkbox" class="checkbox" ng-click="taxShowTable()"></th>
+            <th><label for="cxp">Expiriation</label><input id="cxp" type="checkbox" class="checkbox" ng-click="expirationShowTable()"></th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="i in items">
+                <td ng-include="nameUrl"></td>
+                <td ng-include="priceUrl"></td>
+                <td ng-include="categoryUrl"></td>
+                <td ng-include="countUrl"></td>
+                <td ng-include="taxUrl"></td>
+                <td ng-include="expirationUrl"></td>
             </tr>
-        </table>
+        </tbody>
 
-    
+    </table>
+
 </body>
 
 </html>
