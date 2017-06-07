@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <link rel="stylesheet" type="" href="libs/bootstrap.css">
+    <script src="libs/angular.js"></script>
+    <script src="libs/app.js"></script>
+</head>
+
+<body ng-controller="mainCtrl">
+    <div class="text-center container">
+        <br><br>
+        <h4>Enter two values</h4>
+        <input type="text" ng-model="val1" />
+        <span ng-bind="selectOperation"></span>
+        <input type="text" ng-model="val2" />
+        <button ng-click="calculateResult()">=</button>
+        <span ng-bind='result'></span>
+        <h4>Press a button with an ariphmetical operation</h4>
+        <div>
+            <button type="submit" ng-click="operation('*')">*</button>
+            <button type="submit" ng-click="operation('-')">-</button>
+            <button type="submit" ng-click="operation('+')">+</button>
+            <button type="submit" ng-click="operation('/')">/</button>
+        </div>
+    </div>
+</body>
+
+</html>
