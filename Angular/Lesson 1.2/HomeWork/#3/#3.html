@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <link rel="stylesheet" type="" href="libs/bootstrap.css">
+    <script src="libs/angular.js"></script>
+    <script src="libs/app.js"></script>
+</head>
+
+<body ng-controller="mainCtrl">
+    <div>
+        <div class="container">
+            <form>
+                <label><input type="radio" value="first" ng-model="questions"> Click For 1st Question</label>
+                <label><input type="radio" value="second" ng-model="questions"> Click For 2nd Question</label>
+                <label><input type="radio" value="third" ng-model="questions"> Click For 3rd Question</label>
+                <label><input type="radio" value="fourth" ng-model="questions"> Click For 4th Question</label>
+                <label><input type="radio" value="fifth" ng-model="questions"> Click For 5th Question</label>
+            </form>
+            <hr>
+            <div ng-switch="questions" id="wrapper">
+                <div ng-switch-when="first">
+                    <h2> First Question</h2>
+                </div>
+                <div ng-switch-when="second">
+                    <h2>Second Question </h2>
+                </div>
+                <div ng-switch-when='third'>
+                    <h2> Third Question</h2>
+                </div>
+                  <div ng-switch-when="fourth">
+                    <h2> Fourth Question</h2>
+                </div>
+                  <div ng-switch-when="fifth">
+                    <h2> Fifth Question</h2>
+                </div>
+                  <!--<div ng-switch-default>
+                    <h2> First Question</h2>
+                </div>-->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
