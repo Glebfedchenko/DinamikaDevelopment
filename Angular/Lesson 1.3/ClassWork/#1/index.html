@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <link rel="" type="" href="libs/bootstrap.css">
+    <script src="libs/angular.js"></script>
+    <script src="libs/app.js"></script>
+</head>
+<style>
+    .lightblue {
+        background: lightblue;
+    }
+
+    .border {
+        border: 3px solid red;
+    }
+</style>
+
+<body ng-controller="mainCtrl">
+    <div class="container">
+        <button ng-click="handleClick()">Change Styles</button>
+        <div ng-class="changeClass">Div to change styles</div>
+    </div>
+</body>
+
+</html>
