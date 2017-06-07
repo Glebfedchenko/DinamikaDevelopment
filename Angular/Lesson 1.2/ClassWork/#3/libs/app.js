@@ -2,7 +2,7 @@ var app = angular.module('app', []);
 
 app.controller('mainCtrl', function ($scope) {
 
-    $scope.nameUrl = 'libs/name.html';
+    $scope.nameUrl = 'partials/name.html';
     $scope.priceUrl = '';
     $scope.categoryUrl = '';
     $scope.countUrl = '';
@@ -13,22 +13,23 @@ app.controller('mainCtrl', function ($scope) {
         { name: "A Item", price: 1.1, category: "Category 1", count: 8, tax: 0.55, expiration: 12 },
         { name: "D Item", price: 2.6, category: "Category 2", count: 7, tax: 0.22, expiration: 5 },
         { name: "C Item", price: 17.5, category: "Category 2", count: 33, tax: 2.77, expiration: 10 }];
-    $scope.nameShowTable = function () {
-        $scope.nameUrl = 'name.html';
+    $scope.showName = function () {
+        $scope.nameUrl = 'partials/name.html';
     };
-    $scope.priceShowTable = function () {
-        $scope.priceUrl = 'price.html';
+    $scope.showPrice = function () {
+        $scope.priceUrl = 'partials/price.html';
     };
-    $scope.categoryShowTable = function () {
-        $scope.categoryUrl = 'category.html';
+    $scope.showCat = function () {
+        $scope.categoryUrl = 'partials/category.html';
     };
-    $scope.countShowTable = function () {
-        $scope.countUrl = 'count.html';
+    $scope.showCount = function () {
+        $scope.countUrl = 'partials/count.html';
     };
-    $scope.taxShowTable = function () {
-        $scope.taxUrl = 'tax.html';
+    $scope.showTax = function () {
+        $scope.taxUrl = 'partials/tax.html';
     };
-    $scope.expirationShowTable = function () {
-        $scope.expirationUrl = 'expiration.html';
+    $scope.showExp = function () {
+        $scope.expirationUrl = 'partials/expiration.html';
     };
 });
+

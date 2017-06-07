@@ -10,12 +10,14 @@
 <body ng-controller="mainCtrl">
     <table class="table">
         <thead>
-            <th><label for="cnm">Name</label><input id="cnm" type="checkbox" class="checkbox" ng-click="nameShowTable()"></th>
-            <th><label for="cprc">Price</label><input id="cprc" type="checkbox" class="checkbox" ng-click="priceShowTable()"></th>
-            <th><label for="cctgr">Category</label><input id="cctgr" type="checkbox" class="checkbox" ng-click="categoryShowTable()"></th>
-            <th><label for="ccnt">Count</label><input id="ccnt" type="checkbox" class="checkbox" ng-click="countShowTable()"></th>
-            <th><label for="ctx">Tax</label><input id="ctx" type="checkbox" class="checkbox" ng-click="taxShowTable()"></th>
-            <th><label for="cxp">Expiriation</label><input id="cxp" type="checkbox" class="checkbox" ng-click="expirationShowTable()"></th>
+            <tr>
+                <th><label for="cnm">Name</label><input id="cnm" type="checkbox" class="checkbox" ng-click="showNamt()"></th>
+                <th><label for="cprc">Price</label><input id="cprc" type="checkbox" class="checkbox" ng-click="showPrice()"></th>
+                <th><label for="cctgr">Category</label><input id="cctgr" type="checkbox" class="checkbox" ng-click="showCat()"></th>
+                <th><label for="ccnt">Count</label><input id="ccnt" type="checkbox" class="checkbox" ng-click="showCount()"></th>
+                <th><label for="ctx">Tax</label><input id="ctx" type="checkbox" class="checkbox" ng-click="showTax()"></th>
+                <th><label for="cxp">Expiriation</label><input id="cxp" type="checkbox" class="checkbox" ng-click="showExp()"></th>
+            </tr>
         </thead>
         <tbody>
             <tr ng-repeat="i in items">
@@ -27,7 +29,6 @@
                 <td ng-include="expirationUrl"></td>
             </tr>
         </tbody>
-
     </table>
 
 </body>
