@@ -8,30 +8,32 @@
 </head>
 
 <body ng-controller="mainCtrl">
-    <div class="container">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th> <input type="checkbox"> Items Name</th>
-                    <th> <input type="checkbox"> Items Price</th>
-                    <th> <input type="checkbox"> Items Category</th>
-                    <th> <input type="checkbox"> Items Count</th>
-                    <th> <input type="checkbox"> Items Tax</th>
-                    <th> <input type="checkbox"> Items Expiration</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="i in items">
-                    <th>{{i.name}}</th>
-                    <th>{{i.price}}</th>
-                    <th>{{i.category}}</th>
-                    <th>{{i.count}}</th>
-                    <th>{{i.tax}}</th>
-                    <th>{{i.expiration}}</th>
-                </tr>
-            </tbody>
-
-        </table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th><label for="cnm">Name</label><input id="cnm" type="checkbox" class="checkbox" ng-model="mode.name" ng-false-value="'name'"
+                    /></th>
+                <th><label for="cprc">Price</label><input id="cprc" type="checkbox" class="checkbox" ng-model="mode.price" ng-true-value="'price'"
+                    /></th>
+                <th><label for="cctgr">Category</label><input id="cctgr" type="checkbox" class="checkbox" ng-model="mode.category"
+                        ng-true-value="'category'" /></th>
+                <th><label for="ccnt">Count</label><input id="ccnt" type="checkbox" class="checkbox" ng-model="mode.count" ng-true-value="'count'"
+                    /></th>
+                <th><label for="ctx">Tax</label><input id="ctx" type="checkbox" class="checkbox" ng-model="mode.tax" ng-true-value="'tax'"
+                    /></th>
+                <th><label for="cxp">Expiriation</label><input id="cxp" type="checkbox" class="checkbox" ng-model="mode.expiration"
+                        ng-true-value="'expiration'" /></th>
+            </tr>
+        </thead>
+        <tr ng-repeat="item in items" ng-switch on="mode">
+            <td ng-switch-when="mode.name">{{item.name}}</td>
+            <td ng-switch-when="mode.price">{{item.price}}</td>
+            <td ng-switch-when="mode.category">{{item.category}}</td>
+            <td ng-switch-when="mode.count">{{item.count}}</td>
+            <td ng-switch-when="mode.tax">{{item.tax}}</td>
+            <td ng-switch-when="mode.exp">{{item.expiration}}</td>
+        </tr>
+    </table>
 </body>
 
 </html>

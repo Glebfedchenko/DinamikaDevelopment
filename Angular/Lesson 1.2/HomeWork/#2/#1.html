@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <link rel="stylesheet" type="" href="libs/bootstrap.css">
+    <script src="libs/angular.js"></script>
+    <script src="libs/app.js"></script>
+</head>
+
+<body ng-controller="mainCtrl">
+    <div class="container">
+        <select ng-model="mode" ng-options="item.display for item in options track by item.value"></select>
+        <div ng-if="false">asdasdsad</div>
+        <div ng-switch on="mode.value" style="margin-top:20px;">
+
+            <table class="table" ng-switch-when="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Count</th>
+                        <th>Tax</th>
+                        <th>Expiration</th>
+                    </tr>
+                </thead>
+                <tr ng-repeat="t in items">
+                    <td>{{t.name}}</td>
+                    <td>{{t.price}}</td>
+                    <td>{{t.category}}</td>
+                    <td>{{t.count}}</td>
+                    <td>{{t.tax}}</td>
+                    <td>{{t.expiration}}</td>
+                </tr>
+            </table>
+
+            <ul class="list-group" ng-switch-when="list" ng-repeat="t in items">
+                <li>Nam: {{t.name}}</li>
+                <li>Price: {{t.price}}</li>
+                <li>Category:{{t.category}}</li>
+                <li>Count: {{t.count}}</li>
+                <li>Tax: {{t.tax}}</li>
+                <li>Expiration: {{t.expiration}}</li>
+            </ul>
+
+        </div>
+    </div>
+</body>
+
+</html>
