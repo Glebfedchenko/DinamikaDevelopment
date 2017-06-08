@@ -5,11 +5,44 @@
     <link rel="" type="" href="libs/bootstrap.css">
     <script src="libs/angular.js"></script>
     <script src="libs/app.js"></script>
+    <style>
+    .green {
+      background-color: green;
+      height: 500px;
+      width: 100%;
+      border: 1px solid black;
+    }
+    
+    .blue {
+      background: blue;
+      height: 500px;
+      width: 100%;
+      border: 1px solid black;
+    }
+    
+    .yellow {
+      background: yellow;
+      height: 500px;
+      width: 100%;
+      border: 1px solid black;
+    }
+    .default {
+      height: 500px;
+      width: 100%;
+      border: 1px solid black;
+    }
+  </style>
 </head>
 
 <body ng-controller="mainCtrl">
     <div>
+<div class='container'>
+    <input type="checkbox" ng-model='styles.green' /> Pick Green
+    <input type="checkbox" ng-model='styles.blue' /> Pick Blue
+    <input type="checkbox" ng-model='styles.yellow' /> Pick Yellow
+  </div>
 
+  <div class='default' ng-class="styles"></div>
     </div>
 </body>
 
