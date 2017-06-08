@@ -1,13 +1,23 @@
 var app = angular.module('app', []);
 
-app.provider('myProvider',function(){
-    this.$get = function(){
-        return 'My Value';
-    };
+app.provider('mainProvider', function () {
+    var counter = 1;
+
+    return {
+        $get: function () {
+            return {
+                generate: function () {
+                    console.log('Button clicked' + ' ' + counter);
+                    return counter++;
+                }
+            }
+        }
+    }
 })
 
-
-app.controller('mainCtrl',function(myProvider){
-    console.log('myProvider' + myProvider);
+app.controller('mainCtrl', function ($scope, mainProvider) {
+    $scope.totalClicks = 0;
+    $scope.clicker = function () {
+        $scope.totalClicks = mainProvider.generate();
+    }
 });
-
