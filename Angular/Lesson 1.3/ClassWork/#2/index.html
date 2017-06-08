@@ -8,9 +8,28 @@
 </head>
 
 <body ng-controller="mainCtrl">
-    <div>
-
-    </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category </th>
+        <th>Count</th>
+        <th>Tax</th>
+        <th>Expiration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="i in items | orderBy:'name'">
+        <td>{{i.name}}</td>
+        <td>{{i.price }}</td>
+        <td>{{i.category}}</td>
+        <td>{{i.count}}</td>
+        <td>{{i.tax | currency}}</td>
+        <td>{{i.expiration}}</td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 
 </html>
