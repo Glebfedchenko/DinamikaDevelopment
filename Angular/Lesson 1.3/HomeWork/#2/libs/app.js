@@ -6,7 +6,13 @@ app.controller('mainCtrl', function ($scope) {
        {name:'dog' },
        {name:'cat'  },
        {name:'frog'  },
-       {name:'chinchilla'  }
+       {name:'chinchilla'  },
+       {name:'elephant'  },
+       {name:'bear'  },
+       {name:'panda'  },
+       {name:'bird'  },
+       {name:'parrot'  },
+       {name:'lion'  }
      ]
 
     $scope.search=function(){
