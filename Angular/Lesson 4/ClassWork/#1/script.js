@@ -2,8 +2,9 @@ var app = angular.module('app', []);
 
 app.factory('mainFact', function(){
     var mainFact={};
-    var counter = 0;
+    var counter = 1;
     mainFact.generate = function(){
+        console.log('Button clicked' + ' '+ counter);
         return counter++;
     };
     return mainFact;
