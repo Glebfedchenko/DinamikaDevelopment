@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="calculatorModule">
+
+<head>
+    <title>APP</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-controller="MainCtrl">
+
+    <div class="container">
+        <h3>Enter your values for expression</h3>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon" id="value1">Value 1</span>
+                    <input type="number" class="form-control" placeholder="" ng-model="value1">
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon" id="value2">Value 2</span>
+                    <input type="number" class="form-control" placeholder="" ng-model="value2">
+
+                </div>
+            </div>
+        </div>
+        <h3>Operatins</h3>
+        <div class="btn-group-lg" role="group" aria-label="...">
+            <button type="button" class="btn btn-primary" ng-click="getSum()">+</button>
+            <button type="button" class="btn btn-success" ng-click="getSubtraction()">-</button>
+            <button type="button" class="btn btn-default" ng-click="getMultiplication()">*</button>
+            <button type="button" class="btn btn-danger" ng-click="getDivision()">/</button>
+        </div>
+        <br>
+        <h3>Expression result</h3>
+        <input type="text" class="form-control" placeholder="" ng-model="result">
+
+
+    </div>
+</body>
+
+</html>
