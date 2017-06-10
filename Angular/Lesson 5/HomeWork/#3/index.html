@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body ng-controller="mainCtrl">
+
+    <div class="text-center container">
+        <ul class="a">
+            <li>
+                <a id="home" ng-click="scrollTo('home')">Home</a>
+                <a ng-click="scrollTo('about')" href="">About</a>
+                <a ng-click="scrollTo('myt')">My Things</a>
+                <a ng-click="scrollTo('w')">Where</a>
+                <a ng-click="scrollTo('c')">Contact</a>
+            </li>
+        </ul>
+        <h2>
+            <div id="home">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur debitis, asperiores suscipit dolorum pariatur
+                odit tenetur! Officia minima itaque, facere qui facilis deserunt veritatis amet, iste nemo quidem eos asperiores.</div>
+        </h2>
+        <h2>
+            <div id='about'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur debitis, asperiores suscipit dolorum pariatur
+                odit tenetur! Officia minima itaque, facere qui facilis deserunt veritatis amet, iste nemo quidem eos asperiores.</div>
+        </h2>
+        <h2>
+            <div id='myt'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur debitis, asperiores suscipit dolorum pariatur
+                odit tenetur! Officia minima itaque, facere qui facilis deserunt veritatis amet, iste nemo quidem eos asperiores.</div>
+        </h2>
+        <h2>
+            <div id='w'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur debitis, asperiores suscipit dolorum pariatur
+                odit tenetur! Officia minima itaque, facere qui facilis deserunt veritatis amet, iste nemo quidem eos asperiores.</div>
+        </h2>
+        <h2>
+            <div id='c'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur debitis, asperiores suscipit dolorum pariatur
+                odit tenetur! Officia minima itaque, facere qui facilis deserunt veritatis amet, iste nemo quidem eos asperiores.</div>
+        </h2>
+
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-localScroll/1.4.0/jquery.localScroll.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

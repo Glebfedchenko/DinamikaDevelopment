@@ -10,11 +10,14 @@
 </head>
 
 <body ng-controller="mainCtrl">
-   <input type="text" >
-   <button class="btn btn-primary" ng-click="calculate()">Calulate</button>
-   <div>
-       {{result}}
-   </div>
+    <div class="container jumbotron text-center">
+        <button class="btn btn-primary" data-ng-click="start()">Start</button>
+        <button class="btn btn-danger" data-ng-click="stopTimer()">Stop</button>
+        <div>
+            Timer: {{timer}}
+        </div>
+        <button class="btn btn-default" data-ng-click="reset()">Reset</button>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
     <script src="script.js"></script>
 </body>

@@ -1,0 +1,16 @@
+ul, li a{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+li{
+    margin: 20px;
+}
+a{
+    margin-right: 50px;
+}
+a:hover{
+    color:rebeccapurple;
+    flex-wrap: bold;
+    text-decoration: none;
+}
