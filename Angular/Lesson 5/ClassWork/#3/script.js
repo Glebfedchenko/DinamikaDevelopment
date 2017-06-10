@@ -1,19 +1,19 @@
 var app = angular.module('app', []);
-
-app.factory('mainFact', function(){
-    var mainFact={};
-    var counter = 1;
-    mainFact.generate = function(){
-        console.log('Button clicked' + ' '+ counter);
-        return counter++;
-    };
-    return mainFact;
-})
-
-
-app.controller('mainCtrl', function ($scope, mainFact) {
-    $scope.totalClicks = 0;
-    $scope.clicker = function(){
-        $scope.totalClicks = mainFact.generate();
-    }
+app.controller('mainCtrl', function ($scope) {
+    $scope.name = "Ivan";
+    $scope.str = "Hello my name is <strong>{{name}}</strong>";
 });
+
+app.directive('compile', ['$compile', function ($compile) {
+    return function (scope, element, attrs) {
+        scope.$watch(
+            function (scope) {
+                return scope.$eval(attrs.compile);
+            },
+            function (value) {
+                element.html(value);
+                $compile(element.contents())(scope);
+            }
+        );
+    };
+}])
