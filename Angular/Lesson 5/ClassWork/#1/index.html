@@ -10,10 +10,11 @@
 </head>
 
 <body ng-controller="mainCtrl">
-   <input type="text" >
-   <button class="btn btn-primary" ng-click="calculate()">Calulate</button>
-   <div>
-       {{result}}
+   <div class="container jubmotron text-center">
+       <h3>Calculator</h3>
+       <input type="text" ng-model="calc">
+       <button ng-click="parseCalc()">$parse</button>
+       <h4>Result: {{result}}</h4>
    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
     <script src="script.js"></script>
