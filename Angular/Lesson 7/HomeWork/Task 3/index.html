@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html lang="en" ng-app="myModule">
 
 <head>
     <meta charset="UTF-8">
@@ -10,21 +10,21 @@
     <title>Document</title>
 </head>
 
-<body>
-    <body ng-controller="MainCtrl">
+
+<body ng-controller="MainCtrl">
 
 <div class="container">
-    <div >
-        <ul >
-            <dir></dir>
+    <div class="panel panel-primary well">
+        <ul class="nav nav-tabs">
+            <!--<li ng-repeat="item in menuItems"><a href="#!/{{item.id}}">{{item.Name}}</a></li>-->
+            <my-tag></my-tag>
         </ul>
     </div>
-    <div ng-view></div>
-
-
-
+    <div class="panel" ng-view></div>
 </div>
+</body>
     <script src="../Libraries/angular.js"></script>
+    <script src="../Libraries/angular_route.js"></script>
     <script src="app.js"></script>
 </body>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html lang="en" ng-app="myModule">
 
 <head>
     <meta charset="UTF-8">
@@ -11,11 +11,16 @@
 </head>
 
 <body>
-    <div ng-controller="MainCtrl">
+<div ng-controller="MainCtrl">
     <div class="container">
-            <div dir="animals"></div>
-    <script src="../Libraries/angular.js"></script>
-    <script src="app.js"></script>
+        <div class="well-lg">
+            <div my-tag items="items"></div>
+        </div>
+    </div>
+</div>
+            <script src="../Libraries/angular.js"></script>
+            <script src="../Libraries/angular_route.js"></script>
+            <script src="app.js"></script>
 </body>
 
 </html>
