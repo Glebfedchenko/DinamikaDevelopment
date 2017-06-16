@@ -9,17 +9,19 @@
 
 <body ng-controller="mainCtrl">
     <div class="container jumbotron">
-        <input type="text" ng-model="query">
+        <h2>Please enter animal name to filter</h2>
+
+        <input placeholder ='Animal name' type="text" ng-model="query">
         <button type="button" ng-click="search()">search
          </button>
 
     </div>
-<div ng-repeat="a in animalsToFilter | filter: searchQuery">
-<div class="container jumbotron">
-    <h2>{{a.name}}</h2>
-</div>
-</div>
-    
+    <div ng-repeat="a in animalsToFilter | filter: searchQuery">
+        <div class="container jumbotron">
+            <h2>{{a.name}}</h2>
+        </div>
+    </div>
+
 </body>
 
 </html>
