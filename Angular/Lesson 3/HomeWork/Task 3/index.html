@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="" href="libs/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <script src="libs/angular.js"></script>
-    <script src="libs/app.js"></script>
+    <script src="app.js"></script>
 </head>
 
 <body ng-controller="mainCtrl">
@@ -14,33 +14,56 @@
         <form name='newuser' novalidate>
             <div class="form-group">
                 <label for="name">First name</label>
-                <input class="form-control" name='name' placeholder="Enter your first name" ng-model="data.name" ng-required='true'>
+                <input aria-describedby="name" ng-blur='isNameValid = newuser.name.$invalid && newuser.name.$dirty' class="form-control"
+                    ng-pattern='nameRegexp' name='name' placeholder="Enter your first name" ng-model="data.name" ng-required='true'>
                 <div ng-show="newuser.name.$touched && newuser.name.$invalid"><small>{{getError(newuser.name.$error)}}</small></div>
             </div>
+            <div class="alert alert-danger" ng-show="isNameValid" role="alert">
+                Enter a valid name
+            </div>
+
             <div class="form-group">
                 <label for="surname">Surname</label>
-                <input class="form-control" name='surname' placeholder="Enter your surname" ng-model="data.surname" ng-required='true'>
+                <input class="form-control" ng-blur='isSurnameValid = newuser.surname.$invalid && newuser.surname.$dirty' ng-pattern='nameRegexp'
+                    name='surname' placeholder="Enter your surname" ng-model="data.surname" ng-required='true'>
                 <div ng-show="newuser.surname.$touched && newuser.surname.$invalid"><small>{{getError(newuser.surname.$error)}}</small></div>
             </div>
+            <div class="alert alert-danger" ng-show="isSurnameValid" role="alert">
+                Enter a valid surname
+            </div>
             <div class="form-group">
-                <label for="employees">E-mail</label>
-                <input class="form-control" name='email' placeholder="Enter your email" ng-model="data.email" ng-required='true' type="email">
+                <label for="email">E-mail</label>
+                <input  ng-blur="isEmailValid = newuser.email.$invalid && newuser.email.$dirty" aria-describedby="email" class="form-control" name='email' placeholder="Enter your email" ng-model="data.email" ng-required='true'
+                    type="email">
                 <div ng-show="newuser.email.$touched && newuser.email.$invalid"><small>{{mailGetError(newuser.email.$error)}}</small></div>
 
             </div>
+            <div class="alert alert-danger" ng-show="isEmailValid" role="alert">
+                Enter a valid E-mail
+            </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input class="form-control" name='password' type='password' placeholder="Enter your password" ng-model="data.password" ng-required='true'>
+                <input ng-pattern='passwordRegexp'  aria-describedby="password" ng-blur="isP1Valid = newuser.password.$invalid && newuser.password.$dirty" class="form-control" name='password' type='password'
+                    placeholder="Enter your password" ng-model="data.password" ng-required='true'>
                 <div ng-show="newuser.password.$touched && newuser.password.$invalid"><small>{{getError(newuser.password.$error)}}</small></div>
+            </div>
+            <div class="alert alert-danger" ng-show="isP1Valid" role="alert">
+                Passwords should have more than 5 characters 
             </div>
             <div class="form-group">
                 <label for="passwordcheck">Check password</label>
-                <input class="form-control" name='passwordcheck' type='password' placeholder="Enter your password again" ng-model="data.passwordcheck"
-                    ng-required='true'>
+                <input ng-pattern='passwordRegexp' aria-describedby="passwordcheck" ng-blur="isP2Valid(newuser.isP2Valid.$invalid, newuser.isP2Valid.$dirty)" class="form-control" name='passwordcheck'
+                    type='password' placeholder="Enter your password again" ng-model="data.passwordcheck" ng-required='true'>
                 <div ng-show="newuser.passwordcheck.$touched && newuser.passwordcheck.$invalid"><small>{{getError(newuser.passwordcheck.$error)}}</small></div>
             </div>
-            <input type="submit" value='Register' ng-disabled="newuser.$invalid">
+            <div class="alert alert-danger" ng-show="isP2Valid" role="alert">
+                Enter equal password
+            </div>
+            <input type="submit" value='Register' ng-disabled="newuser.$invalid" ng-click="onFormSubmit(newuser.$valid)">
         </form>
+        <div class="container" ng-if="message">
+            <h2>{{message}}</h2>
+        </div>
     </div>
 </body>
 

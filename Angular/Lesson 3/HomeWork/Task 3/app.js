@@ -19,6 +19,10 @@ app.controller('mainCtrl', function ($scope) {
             }
         }
     }
+
+    $scope.nameRegexp = /(.*[a-z]){3,}/i;
+    $scope.passwordRegexp = /[a-zA-Z0-9]{5,}/;
+
     $scope.valid = false;
     $scope.changepass = function(){
         var regexp = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-z0-9!@#$%^&]{8,12}$/;
@@ -28,5 +32,9 @@ app.controller('mainCtrl', function ($scope) {
             $scope.passvalidation=true;
         }
     };
-
+$scope.onFormSubmit = function (valid) {
+        if (valid) {
+            $scope.message = "Form Submitted";
+        }
+    };
 });
