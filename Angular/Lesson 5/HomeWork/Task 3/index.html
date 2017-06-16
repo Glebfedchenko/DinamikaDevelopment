@@ -6,50 +6,35 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet"  href="styles.css">
     <title>Document</title>
 </head>
 
 <body ng-controller="mainCtrl">
+    
+   <div class="container">
+        <div class="row" id="top">
+            <div class="col-lg-3">
+                <ul>
+                    <li ng-repeat="i in data" ng-click="go('i'+i.id)"><a href="#">{{i.header}}</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-9">
+                <div class="panel panel-danger">
+                    <div class="well-lg">
+                        <h3 ng-repeat-start="i in data" id="i{{i.id}}">{{i.header}}</h3>
+                        <p>{{i.descr}}</p>
+                        <br ng-repeat-end>
+                    </div>
+                </div>
+            </div>
 
-    <div class="text-center container">
-        <ul class="a">
-            <li>
-                <a id="home" ng-click="scrollTo('home')">Home</a>
-                <a ng-click="scrollTo('about')" href="">About</a>
-                <a ng-click="scrollTo('myt')">My Things</a>
-                <a ng-click="scrollTo('w')">Where</a>
-                <a ng-click="scrollTo('c')">Contact</a>
-            </li>
-        </ul>
-        <h2>
-            <div id="home">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur debitis, asperiores suscipit dolorum pariatur
-                odit tenetur! Officia minima itaque, facere qui facilis deserunt veritatis amet, iste nemo quidem eos asperiores.</div>
-        </h2>
-        <h2>
-            <div id='about'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur debitis, asperiores suscipit dolorum pariatur
-                odit tenetur! Officia minima itaque, facere qui facilis deserunt veritatis amet, iste nemo quidem eos asperiores.</div>
-        </h2>
-        <h2>
-            <div id='myt'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur debitis, asperiores suscipit dolorum pariatur
-                odit tenetur! Officia minima itaque, facere qui facilis deserunt veritatis amet, iste nemo quidem eos asperiores.</div>
-        </h2>
-        <h2>
-            <div id='w'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur debitis, asperiores suscipit dolorum pariatur
-                odit tenetur! Officia minima itaque, facere qui facilis deserunt veritatis amet, iste nemo quidem eos asperiores.</div>
-        </h2>
-        <h2>
-            <div id='c'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur debitis, asperiores suscipit dolorum pariatur
-                odit tenetur! Officia minima itaque, facere qui facilis deserunt veritatis amet, iste nemo quidem eos asperiores.</div>
-        </h2>
-
+        </div>
+        <button style='position:fixed;top:2%;left:2%;'class="btn btn-primary" ng-click="go('top')" value="">GO TOP</button>
 
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-localScroll/1.4.0/jquery.localScroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/1.0.2/angular-scroll.min.js"></script>
     <script src="script.js"></script>
 </body>
 
