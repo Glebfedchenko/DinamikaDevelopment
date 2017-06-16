@@ -57,7 +57,8 @@ function DivisionServiceFactory() {
     return function (val1, val2) {
 
         var output;
-        val2 == 0 ? output = "NAN" : output = val1 / val2;
+        val2 == 0 ? output = "DIVIZION BY ZERO IS IMPOSSIBLE" : output = val1 / val2;
+        alert("DIVIZION BY ZERO IS IMPOSSIBLE");
         return output;
     }
 }
