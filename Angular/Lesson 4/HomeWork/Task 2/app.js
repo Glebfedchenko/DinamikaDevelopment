@@ -29,7 +29,9 @@ function ToDoCtrl($scope, ServerService) {
 
         }
     }
-
+    $scope.nameRegexp = /(.){3,}/i;
+    $scope.duedateRegexp = /^(0[1-9]|[12][0-9]|3[01])[\/.](?:(0[1-9]|1[012])[\/.](19|20)[0-9]{2})$/;
+    $scope.descrRegexp = /(.){3,}/i;
 
 }
 

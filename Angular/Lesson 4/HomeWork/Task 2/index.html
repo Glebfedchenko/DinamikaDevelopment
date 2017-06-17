@@ -38,25 +38,29 @@
         </table>
 
         <div>
-
+<form name="f">
+    
             <h4><label for="Name">Name</label></h4>
             <div class="input-group input-group-lg">
-                <input type="text" ng-model="itemName" class="form-control" id="Name" aria-describedby="Name">
+                <input required aria-describedby="Name" ng-pattern="nameRegexp" type="text" ng-model="itemName" class="form-control" id="Name" aria-describedby="Name">
             </div>
-
+            <div><h2 ng-show="f.itemName.$invalid && f.itemName.$dirty"></h2>Please enter correct name</div>
+            
             <h4><label for="DueDate">Due Date</label></h4>
             <div class="input-group input-group-lg">
-                <input type="text" ng-model="itemDueDate" class="form-control" id="DueDate" aria-describedby="DueDate">
+                <input aria-describedby="DueDate" ng-pattern="duedateRegexp" type="text" ng-model="itemDueDate" class="form-control" id="DueDate" aria-describedby="DueDate">
             </div>
-
+            <div><h2 ng-show="f.itemDueDate.$invalid && f.itemDueDate.$dirty"></h2>Please date in corret format </div>
+            
             <h4><label for="Description">Description</label></h4>
             <div class="input-group input-group-lg">
-                <textarea class="form-control" ng-model="itemDescription" name="Description" id="Description" cols="30" rows="3" aria-describedby="Description"></textarea>
+                <textarea aria-describedby="Description" ng-pattern="descrRegexp" class="form-control" ng-model="itemDescription" name="Description" id="Description" cols="30" rows="3" aria-describedby="Description"></textarea>
             </div>
+            <div><h2 ng-show="f.itemDescription.$invalid && f.itemDescription.$dirty"></h2>Please enter correct description </div>
 
             <h4><label for="isCompleted">Completed</label></h4>
             <div class="input-group input-group-lg">
-                <input type="checkbox" aria-label="isCompleted" id="isCompleted" ng-model="itemIsCompleted" style="width: 20px; height: 20px;">
+                <input aria-describedby="isCompleted" type="checkbox" aria-label="isCompleted" id="isCompleted" ng-model="itemIsCompleted" style="width: 20px; height: 20px;">
             </div>
 
             <div>
@@ -69,6 +73,7 @@
                 <p>{{newItemObj}}</p>
             </div>
 
+</form>
         </div>
     </div>
 </body>

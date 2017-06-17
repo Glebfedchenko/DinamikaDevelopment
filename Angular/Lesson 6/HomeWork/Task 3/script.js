@@ -2,19 +2,25 @@ var app = angular.module('app', ['ngRoute']);
 
 app.config(function ($routeProvider, $locationProvider) {
 
-    $locationProvider.html5Mode(true);
-
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: true
+    });
     $routeProvider.when('/', {
-        templateUrl: '/index.html',
+        templateUrl: './Templates/home.html',
         controller: 'mainCtrl'
     });
-
-    $routeProvider.when('/contact/:name/:age/:email/:employed', {
-        templateUrl: '/contact.html',
+    $routeProvider.when('/contact',{
+        templateUrl:'./Templates/contact.html',
         controller:'contactCtrl'
+    });
+
+    $routeProvider.when('/contact/:userName/:userAge/:userEmail', {
+        templateUrl: './Templates/contact.html',
+        controller: 'contactCtrl'
     })
     $routeProvider.otherwise({
-        templateUrl: '/home.html'
+        redirectTo: '/'
     });
 });
 
