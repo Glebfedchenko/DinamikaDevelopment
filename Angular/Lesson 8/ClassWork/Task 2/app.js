@@ -21,6 +21,7 @@ app.controller('mainCtrl', function ($scope, $interval) {
     $scope.counter = 0;
     var interval;
     $scope.start = function () {
+        $scope.counter=0;
         interval = $interval(function () {
             $scope.counter++;
             console.log('counter', $scope.counter);
