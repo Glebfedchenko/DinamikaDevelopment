@@ -1,14 +1,18 @@
-var myModule = angular.module('myModule',['ngRoute']);
+// Условия задачи
+// Создайте директиву для генерации меню.
+//     В качестве источника данных директива должна использовать массив объектов, одно
+// из свойств объекта должено содержать текст элемента меню, второе свойство
+// должно использоватся для определения адреса перехода при клике по элементу меню.
 
 myModule.controller ('MainCtrl', MainCtrl);
-myModule.controller ('SecondCtrl', SecondCtrl);
+myModule.controller ('CMSController', CMSController);
 myModule.directive('myTag',myTag);
 myModule.config (Routes);
 
 function myTag() {
     ddo = {
         restict: 'E',
-        templateUrl:'./Templates/li.html',
+        templateUrl:'Templates/menuNav.html',
         scope:false,
         replace: true
     };
@@ -18,35 +22,39 @@ function myTag() {
 
 Routes.$inject = ['$routeProvider'];
 function Routes($routeProvider) {
-    $routeProvider.when('/views/:index', { template: '<h4>{{itemPrice}}</h4>', controller: SecondCtrl });
+    $routeProvider.when('/views/:index', { template: '<h4>{{itemPrice}}</h4>', controller: CMSController });
 
 }
+
+
+//============== CONTROLLER ===============
 MainCtrl.$inject = ['$scope'];
 function MainCtrl($scope) {
 
 
-    $scope.items = [
+    $scope.menuItems = [
         {
-            id: '1',
-            name: 'SEMGA',
-            description: 'FISH'
+            id: 'salad_1',
+            dishName: 'Hearty Greens',
+            description: 'Roasted Red Grapes, Hazelnut-White Wine Mustard Dressing 8'
         },
         {
-            id: '2',
-            name: 'BEAR',
-            description: 'MAMMAL'
+            id: 'salad_2',
+            dishName: 'Grilled White',
+            description: 'Black Quinoa, Mint, Cured Duck Egg, Charred Lemon Vinaigrette 10'
         },
         {
-            id: '3',
-            name: 'EAGLE',
-            description: 'BIRD'
+            id: 'salad_3',
+            dishName: 'Bourbon-Maple',
+            description: 'Horseradish Cream Sauce, Micro Herb Salad, Cracked Black Pepper 11'
         },
     ]
 
 
 }
-SecondCtrl.$inject = ['$scope', '$route', '$routeParams'];
-function SecondCtrl($scope, $route, $routeParams) {
+CMSController.$inject = ['$scope', '$route', '$routeParams'];
+function CMSController($scope, $route, $routeParams) {
+    // $route.current.templateUrl = '/pages/' + $routeParams.name + ".html";
 
-    $scope.itemPrice = $scope.items[$routeParams.index].description;
+    $scope.itemPrice = $scope.menuItems[$routeParams.index].description;
 }
