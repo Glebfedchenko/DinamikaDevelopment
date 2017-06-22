@@ -77,10 +77,10 @@ function ServerService($http) {
 
 
     };
-
+/*POSTSERVICE */
     service.postNewListItem = function (newItem) {
 
-        var url = 'some-server.com';
+        var url = 'random-server.com';
         var data = newItem;
         var config = {
             headers: {
