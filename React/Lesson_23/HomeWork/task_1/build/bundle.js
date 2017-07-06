@@ -22219,7 +22219,7 @@
 /* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -22249,9 +22249,18 @@
 	    }
 
 	    _createClass(Button, [{
-	        key: "render",
+	        key: 'addUser',
+	        value: function addUser() {
+	            alert('user added');
+	        }
+	    }, {
+	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement("input", { type: "button", value: "Add User" });
+	            return _react2.default.createElement(
+	                'button',
+	                { onClick: this.addUser.bind(this) },
+	                'Add new user'
+	            );
 	        }
 	    }]);
 

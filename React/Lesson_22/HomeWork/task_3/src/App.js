@@ -26,7 +26,17 @@ class User extends Person {
         this.signUpDate = signUpDate,
             this.id = id;
     }
+    click() {
+        users.map((user, index) => {
+            return (
+                <div>
+                    {user.sayHi()}
+                </div>
+            );
+        })
+    }
 }
+
 let user1 = null;
 let user2 = null;
 let user3 = null;
@@ -38,23 +48,22 @@ const users = [
 ];
 console.log(users);
 
-
 class App extends Component {
-
     render() {
         return (
             <div>
                 {users.map((user, index) => {
                     return (
                         <div key={index}>
-                            <p>FirstName : {user.firstName} </p>
+                            <p >FirstName : {user.firstName} </p>
                             <p>LastName : {user.lastName}</p>
                             <p>Age: {user.age}</p>
-                            <hr/>
+                            <hr />
                         </div>
                     )
                 })}
             </div>
+
         );
     }
 }

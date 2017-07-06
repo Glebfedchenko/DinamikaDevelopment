@@ -48,7 +48,7 @@ class App extends Component {
                         }
                     </tbody>
                 </table>
-                <Button />
+                <Button/>
             </div>
         );
     }
