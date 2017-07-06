@@ -29,29 +29,51 @@ class App extends React.Component {
     }
   }
   plusFunc() {
-    this.setState({ result: +this.state.val1 + +this.state.val2 });
-    this.setState({ val1: (this.state.val1 = "") });
-    this.setState({ val2: (this.state.val2 = "") });
+    this.setState({
+      result: +this.state.val1 + +this.state.val2
+    }, () => {
+      this.setState({
+        val1: '',
+        val2: ''
+      })
+    })
   }
   minusFunc() {
-    this.setState({ result: this.state.val1 - this.state.val2 });
-    this.setState({ val1: (this.state.val1 = "") });
-    this.setState({ val2: (this.state.val2 = "") });
+    this.setState({
+      result: +this.state.val1 - +this.state.val2
+    }, () => {
+      this.setState({
+        val1: '',
+        val2: ''
+      })
+    })
   }
   multiplyFunc() {
-    this.setState({ result: this.state.val1 * this.state.val2 });
-    this.setState({ val1: (this.state.val1 = "") });
-    this.setState({ val2: (this.state.val2 = "") });
+    this.setState({
+      result: +this.state.val1 * +this.state.val2
+    }, () => {
+      this.setState({
+        val1: '',
+        val2: ''
+      })
+    })
   }
   divideFunc() {
     if (this.state.val2 == 0) {
       alert("Division by zero is impossible");
-      this.setState({ val1: (this.state.val1 = "") });
-      this.setState({ val2: (this.state.val2 = "") });
+      this.setState({
+        val1: '',
+        val2: ''
+      });
     } else {
-      this.setState({ result: this.state.val1 / this.state.val2 });
-      this.setState({ val1: (this.state.val1 = "") });
-      this.setState({ val2: (this.state.val2 = "") });
+      this.setState({
+        result: +this.state.val1 / +this.state.val2
+      }, () => {
+        this.setState({
+          val1: '',
+          val2: ''
+        })
+      })
     }
   }
 
