@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
 class Child extends Component {
-    state = {  }
+    state = {}
     render() {
         return (
-           <li style={{listStyleType:'none'}} key={this.props.index}>{this.props.name}{this.props.gender}</li>
+            <tr>
+                <td>{this.props.name}</td>
+                <td>{this.props.gender}</td>
+            </tr>
         );
     }
 }

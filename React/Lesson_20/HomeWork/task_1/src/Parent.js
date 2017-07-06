@@ -38,16 +38,10 @@ class Parent extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <td>
                             {this.state.items.map((el, i) => {
-                                return <Child key={i} name={el.name} />
-                            })}
-                        </td>
-                        <td>
-                                                    {this.state.items.map((el,i)=>{
-                            return  <Child key={i} name={el.gender}/>
+                                return <Child key={i} name={el.name} gender={el.gender} />
                         })}
-                        </td>
+
                     </tbody>
                 </table>
             </div>
