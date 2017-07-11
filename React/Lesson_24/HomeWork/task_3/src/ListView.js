@@ -10,32 +10,17 @@ var users = [{first_name:"Matthew",last_name:"Phillips",email:"mphillips0@myspac
     {first_name:"Willie",last_name:"Banks",email:"wbanks6@abc.net.au",gender:"Male",ip_address:"97.0.19.154", id:99873},
     {first_name:"Michael",last_name:"King",email:"mking7@w3.org",gender:"Male",ip_address:"149.114.62.6", id: 34239}];
 
-
-
-export default class Table extends React.Component {
+export default class List extends React.Component {
     render(){
         return (
-            <table className="animate">
-                <thead>
-                    <tr>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
-                        <th>Gender</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        users.map((el, i) => (
-                            <tr key={i}>
-                            <td><Link  to={`/tableView/${i}`}>{el.first_name}</Link></td>
-                            <td><Link  to={`/tableView/${i}`}>{el.last_name}</Link></td>
-                            <td><Link  to={`/tableView/${i}`}>{el.gender}</Link></td>
-                            </tr>
-                            ))
-                    }
-                </tbody>
-            </table>
-
+            <ul className="animate">
+                {
+                    users.map((el, i) => (
+                                <li key={i}><Link  to={`/listView/${i}`}>
+                                {el.first_name} {el.last_name}</Link></li>
+                    ))
+                }
+            </ul>
         )
     }
 }

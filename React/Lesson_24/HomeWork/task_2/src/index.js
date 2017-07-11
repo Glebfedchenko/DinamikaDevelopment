@@ -1,16 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
+import Home from './Home.js';
+import Table from './TableView.js';
+import List from './ListView.js';
 
-import TableView from './TableView';
-import ListView from './ListView';
+class App extends React.Component {
+    render() {
+        return (
+            <HashRouter>
+                <div>
+                    <Home />
+                    <Switch>
+                        <Route path="/tableView" component={Table} />
+                        <Route path="/listView" component={List} />
+                        <Redirect from="*" to="/" />
+                    </Switch>
+                </div>
+            </HashRouter>
+        )
+    }
+}
 
-ReactDOM.render(<Router>
-    <div className="App">
-        <Route path='/' component={App}></Route>
-        <Route exact path='/TableView' component={TableView}></Route>
-        <Route exact path='/ListView' component={ListView}></Route>
-    </div>
-</Router>,
-    document.getElementById('root'));
+ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+);
