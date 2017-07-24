@@ -6,6 +6,7 @@ import HappyStories from '../HappyStories/HappyStories';
 import ContactUs from '../ContactUs/ContactUs';
 import Blog from '../Blog/Blog';
 import Members from '../Members/Members';
+import Register from '../Register/Register';
 
 var Scroll = require('react-scroll');
 var Link = Scroll.Link;
@@ -61,7 +62,7 @@ class Main extends Component {
                             </ul>
                             <ul className="nav navbar-nav navbar-right">
                                 <li><a role='button' onClick={this.show} id='signup' className='navbar-brand' href="#">LOGIN/SIGN UP</a>
-                                {this.state.showLogin ? <Login /> : null}</li>
+                                {this.state.showLogin ? <Register /> : null}</li>
                             </ul>
                         </div>
                     </nav>
