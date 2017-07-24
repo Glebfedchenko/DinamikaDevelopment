@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-class Register extends Component {
+class RegisterReverse extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            signup: false,
-            login: true
+            signup: true,
+            login: false
         }
     }
     switch(word) {
@@ -91,4 +91,4 @@ const Login = () => {
     )
 }
 
-export default Register;
+export default RegisterReverse;

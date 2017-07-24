@@ -8,7 +8,8 @@ class Members extends Component {
         super(props);
 
         this.state = {
-            active: 'FIRST',
+            newMembers: true,
+            onlineMembers: false,
             data: [
                 { id: 1, name: 'NAME LASTNAME', age: '25 years', photo: 'http://apaches.pro/wp-content/uploads/2014/06/olya-270x270.jpg', Online: true, newMember: true },
                 { id: 2, name: 'NAME LASTNAME', age: '25 years', photo: 'http://apaches.pro/wp-content/uploads/2017/04/beck-270x270.jpg', Online: true, newMember: true },
@@ -25,27 +26,33 @@ class Members extends Component {
         };
     }
 
-    handleOnlineClick() {
-        var active = this.state.active;
-
-        var newActive = active === "FIRST" ? "SECOND" : (active === 'SECOND' ? "FIRST": "FIRST");
-        this.setState({
-            active: newActive
-        });
+    switch(word) {
+        var newmember, onlinemember;
+        if (word === 'new') {
+            newmember = true;
+            onlinemember = false;
+        } else {
+            newmember = false;
+            onlinemember = true;
+        }
+        return this.setState({ newMember: newmember, onlineMembers: onlinemember });
     }
 
     render() {
-        var active = this.state.active
         return (
             <section id='memberssection'>
                 <div className='container'>
-                    <div className="col-xs-6 text-right"><a href="" id='newm'>New Members</a></div>
-                    <div className="col-xs-6 text-left"><a onClick={this.handleOnlineClick.bind(this)} href="" id='onm'>Online Members</a></div>
+                    <div className="col-xs-6 text-right">
+                        <a onClick={this.switch.bind(this,'f')} href="" id='newm'>New Members</a>
+                    </div>
+                    <div className="col-xs-6 text-left">
+                        <a onClick={this.switch.bind(this,'new')} href="" id='onm'>Online Members</a>
+                    </div>
                 </div>
                 <div className='container'>
-                   {active === "FIRST" ? <New data={this.state.data} /> : active === "SECOND" ? 
-                   <Online data={this.state.data} /> : active === "SECOND" ? 
-                   <New data={this.state.data} /> : <New data={this.state.data} />}
+                    {this.state.newMembers ? <New data={this.state.data} /> : null}
+                    {this.state.onlineMembers ? <Online data={this.state.data} /> : null}
+
                 </div>
             </section>
         );

@@ -149,29 +149,3 @@ class Main extends Component {
 
 export default Main;
 
-const Login = () => {
-    return (
-        <div className='forma'>
-            <form >
-                <div className="row" id='mm'>
-                    <div className="col-md-6 text-right"><a id='activea' href="">LOGIN</a></div>
-                    <div className="col-md-6 text-left"><a href="">SIGN UP</a></div>
-                </div>
-                <div className="form-group" id='acitvelabel'>
-                    <label htmlFor="exampleInputEmail1"></label>
-                    <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Name" />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="exampleInputPassword1"></label>
-                    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
-                </div>
-            </form>
-            <div className='text-center'>
-                <button className='btn btn-lg' >LOG IN</button>
-            </div>
-            <div className='text-center'>
-                <p>Forgot password?</p>
-            </div>
-        </div>
-    )
-}
