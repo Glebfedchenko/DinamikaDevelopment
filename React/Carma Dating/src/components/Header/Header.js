@@ -7,6 +7,7 @@ import ContactUs from '../ContactUs/ContactUs';
 import Blog from '../Blog/Blog';
 import Members from '../Members/Members';
 import Register from '../Register/Register';
+import Search from '../Search/Search';
 
 var Scroll = require('react-scroll');
 var Link = Scroll.Link;
@@ -33,9 +34,6 @@ class Main extends Component {
     }
 
     render() {
-        const options = (x, index) => {
-            return <option key={index}>{x}</option>
-        }
 
         return (
             <div>
@@ -74,31 +72,7 @@ class Main extends Component {
                     </Element>
                 </section>
 
-                <div id='search'>
-                    <div className='selections text-center'>
-                        <select name="" id="" className='text-left'>
-                            <option disabled selected>{this.state.defaults[0]}</option>
-                            {this.state.i.map(options)}
-                        </select>
-                        <select name="" id="">
-                            <option disabled selected>{this.state.defaults[1]}</option>
-                            {this.state.seek.map(options)}
-                        </select>
-                        <select name="" id="">
-                            <option disabled selected>{this.state.defaults[2]}</option>
-                            {this.state.age.map(options)}
-                        </select>
-                        <select name="" id="">
-                            <option disabled selected>{this.state.defaults[3]}</option>
-                            {this.state.to.map(options)}
-                        </select>
-                        <select name="" id="">.
-                      <option disabled selected>{this.state.defaults[4]}</option>
-                            {this.state.country.map(options)}
-                        </select>
-                        <button className='btn btn-lg'>SEARCH</button>
-                    </div>
-                </div>
+                <Search {...this.state}/>
                 <Element name='members' className='element'><Members /></Element>
                 <Info />
 

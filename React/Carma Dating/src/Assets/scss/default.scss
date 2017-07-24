@@ -499,21 +499,161 @@ label{
         }
 }
 
+        .newMember, .onlineMember{
+            font-family: 'Archivo Black';
+            font-weight: 400;
+            font-size: 36px;
+            color: #000;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #dba1fd;
 
-@media (min-width: 768px) {
-  .navbar-nav.navbar-center {
+            &:focus , &:hover{
+             font-family: 'Archivo Black';
+            font-weight: 400;
+            font-size: 36px;
+            color: #818181;
+            padding-bottom: 20px;
+            border-bottom:  2px solid #d7d7d7  ;           
+            }
+        }
+        .newM{
+            font-family: 'Archivo Black';
+            font-weight: 400;
+            font-size: 36px;
+            color: #818181;
+            padding-bottom: 20px;
+            border-bottom:  2px solid #d7d7d7  ; 
+            &:focus , &:hover{
+            font-family: 'Archivo Black';
+            font-weight: 400;
+            font-size: 36px;
+            color: #000;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #dba1fd;
+            }
+        }
+
+   @media screen and (max-width: 320px) {
+    .navbar.navbar-default.navbar-fixed-top{
+        width: 319px;
+    }
+    .navbar-collapse .collapse .in, .navbar-default .navbar-collapse, .navbar-default .navbar-form{
+        border: 0 !important;
+        box-shadow: 0 !important; 
+    }
+    .navbar-toggle{
+        margin:0px;
+    }
+    #navlinks, #mainlogo, #navlinkscol{
+        padding: 0 !important;
+        margin: 0 !important;
+        font-size: 14px !important;
+    }
+    .nav.navbar-nav.navbar-center{
+        margin: 0 !important;
+    }
+    #mainlogo{
+       font-size: 12px;
+    }
+    #signup{
+        margin: 0 !important;
+        font-size: 11px !important;
+        padding: 6px !important; 
+        top:-164px !important;
+        left: 220px !important;
+    }
+    .allyouneed h1, .allyouneed i{
+        font-size: 50px !important;
+        margin-right: 20px !important;
+    }
+
+    .selections select{
+        margin: 0 !important; 
+        padding: 5px !important;
+        margin-right: 8px !important;
+    }
+    #onm, #newm {
+        font-size: 15px !important;
+        border: none !important;
+    }
+    #registersection{
+        width: 150px !important;
+        top: -163px;
+        right: -4px;
+        width: 324px !important;
+    }
+   }
+
+   @media screen and (max-width:687px){
+       .selections select {
+           margin: 10px !important;
+       }
+       #newm, #onm{
+        font-size: 25px !important;
+        }
+        #navlinks, #signup, #mainlogo, #navlinkscol{
+            margin: 0 !important;
+            font-size: 16px !important;
+        }
+        #signup{
+            top: -303px !important;
+            left: 530px !important;
+
+        }
+        #registersection{
+            right: 145px !important;
+            top: -255px !important;
+        }
+   }
+   
+   @media screen and (max-width: 768px) {
+    .navbar-nav.navbar-center {
     position: absolute;
     left: 50%;
     transform: translatex(-50%);
+    }
+    #registersection{
+        right: 220px;
+        .col-md-6.text-right{
+            right: 200px;
+            margin-bottom: -50px;
+        }
+        .col-md-6.text-left{
+            left: 200px;
+            bottom:127px;
+            
+        }
+    }
+    #signupButton{
+        margin-bottom: -70px;
+    }
+    #signup{
+        margin-right: 20px !important;
+    }
+    #mainlogo {
+        margin-left: 20px !important;
+    }
+    #navlinks, #navlinkscol {
+        font-size: 12px !important;
+        padding: 5px;
+    }
+}
+   @media screen and (max-width:1200px){
+        #signup{
+            margin-top: -50px !important;
+        }
+        #registersection {
+            right: 400px;
+        }
+    }
+
+@media (min-width: 1201px) {
+  .nav.navbar-nav.navbar-center{
+      position: absolute;
+      left: 50%;
+      transform: translatex(-50%);
   }
 }
-
-
-
-
-
-
-
 
 
 

@@ -8,8 +8,8 @@ class Members extends Component {
         super(props);
 
         this.state = {
-            newMembers: true,
-            onlineMembers: false,
+            newUsers: true,
+            onlineUsers: false,
             data: [
                 { id: 1, name: 'NAME LASTNAME', age: '25 years', photo: 'http://apaches.pro/wp-content/uploads/2014/06/olya-270x270.jpg', Online: true, newMember: true },
                 { id: 2, name: 'NAME LASTNAME', age: '25 years', photo: 'http://apaches.pro/wp-content/uploads/2017/04/beck-270x270.jpg', Online: true, newMember: true },
@@ -27,31 +27,33 @@ class Members extends Component {
     }
 
     switch(word) {
-        var newmember, onlinemember;
+        var newUsers, onlineUsers;
         if (word === 'new') {
-            newmember = true;
-            onlinemember = false;
+            newUsers = true;
+            onlineUsers = false;
         } else {
-            newmember = false;
-            onlinemember = true;
+            newUsers = false;
+            onlineUsers = true;
         }
-        return this.setState({ newMember: newmember, onlineMembers: onlinemember });
+        return this.setState({ newUsers: newUsers, onlineUsers: onlineUsers });
     }
 
     render() {
         return (
             <section id='memberssection'>
                 <div className='container'>
-                    <div className="col-xs-6 text-right">
-                        <a onClick={this.switch.bind(this,'f')} href="" id='newm'>New Members</a>
+                    <div className="col-xs-6 col-sm-6 col-md-6 text-right">
+                        <a onClick={this.switch.bind(this,'f')} href="" className={this.state.newUsers ? 'newMember': 'newM'}>New Members</a>
                     </div>
-                    <div className="col-xs-6 text-left">
-                        <a onClick={this.switch.bind(this,'new')} href="" id='onm'>Online Members</a>
+                    <div className="col-xs-6 col-sm-6 col-md-6 text-left">
+                        <a onClick={this.switch.bind(this,'new')} href="" className={this.state.onlineUsers ? 'onlineMember':'newM'}>Online Members</a>
                     </div>
                 </div>
                 <div className='container'>
-                    {this.state.newMembers ? <New data={this.state.data} /> : null}
-                    {this.state.onlineMembers ? <Online data={this.state.data} /> : null}
+                    {this.state.newUsers ? 
+                    <New data={this.state.data}  /> : null}
+                    {this.state.onlineUsers ? 
+                    <Online data={this.state.data} /> : null}
 
                 </div>
             </section>

@@ -24,14 +24,14 @@ class Register extends Component {
         return (
             <div id='registersection' className='container'>
                 <form>
-                    <div className='col-md-6 text-right' >
+                    <div className='col-md-6 col-xs-6 col-sm-6 text-right' >
                         <button id="loginButton"
                             onClick={this.switch.bind(this, "login")}
                             className={this.state.login ? "now" : "sleep"}
                         >LOGIN</button>
 
                     </div>
-                    <div className='col-md-6 text-left'>
+                    <div className='col-md-6 col-xs-6 col-sm-6 text-left'>
                         <button id="signupButton"
                             onClick={this.switch.bind(this, "signup")}
                             className={this.state.signup ? "now" : "sleep"}
