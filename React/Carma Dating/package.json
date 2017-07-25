@@ -2,6 +2,7 @@
   "name": "ws",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Glebfedchenko.github.io/carmadating",
   "dependencies": {
     "gulp-rename": "^1.2.2",
     "react": "^15.5.4",
@@ -11,6 +12,7 @@
     "react-scroll": "^1.5.4"
   },
   "devDependencies": {
+    "gh-pages": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-changed": "^3.1.0",
     "gulp-clean-css": "^3.0.4",
@@ -21,8 +23,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy" : "npm run build&&gh-pages -d build"
   }
 }

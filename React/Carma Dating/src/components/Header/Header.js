@@ -19,12 +19,6 @@ class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            defaults: ['I am:', 'Seeking a:', 'Age:', 'To:', 'Country:'],
-            i: ['Male', 'Female'],
-            seek: ['Male', 'Female'],
-            age: [18, 21, 25, 27, 30],
-            to: ['Marrige', 'Talk', 'Date'],
-            country: ['Ukraine', 'Czhech', 'Poland', 'USA'],
             showLogin: false
         }
         this.show = this.show.bind(this);
@@ -72,7 +66,7 @@ class Main extends Component {
                     </Element>
                 </section>
 
-                <Search {...this.state}/>
+                <Search/>
                 <Element name='members' className='element'><Members /></Element>
                 <Info />
 

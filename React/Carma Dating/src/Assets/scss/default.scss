@@ -535,14 +535,14 @@ label{
 
    @media screen and (max-width: 320px) {
     .navbar.navbar-default.navbar-fixed-top{
-        width: 319px;
+        width: 319px !important;
     }
     .navbar-collapse .collapse .in, .navbar-default .navbar-collapse, .navbar-default .navbar-form{
         border: 0 !important;
         box-shadow: 0 !important; 
     }
     .navbar-toggle{
-        margin:0px;
+        margin:0px !important;
     }
     #navlinks, #mainlogo, #navlinkscol{
         padding: 0 !important;
@@ -553,7 +553,7 @@ label{
         margin: 0 !important;
     }
     #mainlogo{
-       font-size: 12px;
+       font-size: 12px !important;
     }
     #signup{
         margin: 0 !important;
@@ -578,8 +578,8 @@ label{
     }
     #registersection{
         width: 150px !important;
-        top: -163px;
-        right: -4px;
+        top: -163px !important;
+        right: -4px !important;
         width: 324px !important;
     }
    }
@@ -613,10 +613,10 @@ label{
     transform: translatex(-50%);
     }
     #registersection{
-        right: 220px;
+        right: 220px !important;
         .col-md-6.text-right{
-            right: 200px;
-            margin-bottom: -50px;
+            margin-right: 200px !important;
+            margin-bottom: -50px !important;
         }
         .col-md-6.text-left{
             left: 200px;
@@ -625,10 +625,11 @@ label{
         }
     }
     #signupButton{
-        margin-bottom: -70px;
+        margin-bottom: -70px !important;
     }
     #signup{
         margin-right: 20px !important;
+        top: 75px !important;
     }
     #mainlogo {
         margin-left: 20px !important;
