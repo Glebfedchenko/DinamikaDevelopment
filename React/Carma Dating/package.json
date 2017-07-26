@@ -2,7 +2,7 @@
   "name": "carmadating",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Glebfedchenko.github.io/",
+  "homepage": "https://Glebfedchenko.github.io/carmadating",
   "dependencies": {
     "gulp-rename": "^1.2.2",
     "react": "^15.5.4",
