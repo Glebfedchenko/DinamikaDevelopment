@@ -1,0 +1,16 @@
+{
+  "name": "task_1",
+  "version": "1.0.0",
+  "description": "Задача 1 Создайте HTTP сервер, который при обработке всех HTTP запросов создает подписанный cookie, доступный только для сервера со сроком жизни 1 неделя.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3"
+  }
+}
