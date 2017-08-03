@@ -1,6 +1,6 @@
 const express = require ('express');
 const app = express ();
-const port = process.env.port || 1337;
+const port = process.env.port || 8000;
 
 var users = [
     {name: 'Jane', age: 23}, {name: 'John', age: 30}, {name: 'Vasya', age: 25},
@@ -21,6 +21,7 @@ app.get ('/users', function (req, res) {
 });
 
 app.get ('/users/:id', function (req, res) {
+
     res.send (JSON.stringify (users[req.params.id]));
 });
 
