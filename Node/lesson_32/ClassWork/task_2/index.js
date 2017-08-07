@@ -5,24 +5,19 @@ var port = process.env.port || 1337;
 
 var session = require('express-session');
 
-// подключение модуля express-mysql-session 
 var MySQLStore = require('express-mysql-session')(session);
 
 var options = {
-    // параметры соединения с бд 
     host: 'localhost',
     port: 3306,
     user: 'fg',
     password: '12345',
     database: 'sessions',
 
-    // как часто будет проводиться удаление устаревших сессий(миллисекунды)
     checkExpirationInterval: 900000,
-    // время устаревания сессии(миллисекунды)
     expiration: 86400000
 };
 
-// создание хранилища для сессии 
 var sessionStore = new MySQLStore(options);
 
 app.use(session({
@@ -45,7 +40,6 @@ app.get('/', function (req, res) {
     res.end('<h2>Number of reguests: ' + requestCount() + '</h2>' + 
         ' <h5>Refresh the page to increase count</h5>') 
 
-    // метод store.get(sessionID, cb) предоставляет доступ к сессии по ID 
     sessionStore.get(req.sessionID, function (err, data) {
 
         if (err) console.log(err);
@@ -55,7 +49,6 @@ app.get('/', function (req, res) {
 
         if (sessionObj.numberOfRequests > 9) {
 
-            // метод store.clear(cb) удаляет все сессии из хранилища 
             sessionStore.clear(function (err) {
 
                 if (err) console.log(err);
@@ -65,7 +58,6 @@ app.get('/', function (req, res) {
         }
     });
 
-    // метод store.length(cb) возвращает количество сохраненных сессий 
     sessionStore.length(function (err, data) {
         if (err) console.log(err);
 

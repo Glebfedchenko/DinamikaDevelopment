@@ -1,16 +1,20 @@
 {
-  "name": "task_2",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "dinamika_development_nodejs",
+  "version": "0.0.1",
+  "description": "lessons and project for nodejs",
+  "main": "./main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node main.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "nodeJS"
+  ],
+  "author": "Sergii Ivanchenko",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
-    "mysql": "^2.14.0"
+    "mysql": "^2.14.1",
+    "serve-index": "^1.9.0"
   }
 }
