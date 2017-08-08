@@ -1,14 +1,8 @@
-var fs = require('fs');
-var arr = new Uint16Array(1024);
-var buf = Buffer.from(arr.buffer);
-var bufdata = buf.toString('utf-8',10,20);
+const fs = require('fs');
 
-fs.open('test.txt', 'w+', (er,fd) => {
-    fs.read(fd,0, buf.length, 0, (er,bufdata)=>{
-        fs.writeFile('output.txt',bufdata, (err) =>{
-            if(err){
-                console.log('Wrong...')
-            }
-        })
-    })
-})
+const first = fs.FileReadStream('./test.txt',{start:10, end:20});
+const second = fs.FileWriteStream('./output.txt');
+
+first.pipe(second).on('close',function () {
+    console.log( 'Logged from 10 to 20 byte');
+});
