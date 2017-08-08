@@ -1,3 +1,7 @@
+// Задача 2
+
+// Модифицируйте код предыдущей задачи. Добавьте код, который отправляет GET запрос по пути '/test'.
+
 const http = require ('http');
 const url = require ('url');
 const port = 1337;
@@ -18,4 +22,6 @@ const server = http.createServer( (req, res) => {
 
 });
 
-server.listen (port);
+server.listen ((port)=>{
+    console.log(`Running at: ${port}`)
+});

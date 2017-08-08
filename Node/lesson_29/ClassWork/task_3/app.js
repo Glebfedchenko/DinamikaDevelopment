@@ -1,3 +1,6 @@
+// Задача 3
+
+// Добавьте в код предыдущей задачи обработку GET запроса по пути '/test'. Ответом сервера на такой запрос должен быть JSON-объект '{"message": "Hello World!"}'.
 const http = require ('http');
 const url = require ('url');
 const port = 1337;
@@ -17,4 +20,6 @@ const server = http.createServer( (req, res) => {
 
 });
 
-server.listen (port);
+server.listen ((port)=>{
+    console.log(`Running at ${port}`);
+});
