@@ -1,19 +1,20 @@
 {
-  "name": "task_1",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": " ",
+  "version": "0.0.1",
+  "description": " ",
+  "main": "./app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "nodeJS"
+  ],
+  "author": " ",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
     "cookie-parser": "^1.4.3",
     "ejs": "^2.5.7",
-    "express": "^4.15.4",
+    "express": "^4.15.3",
     "express-mysql-session": "^1.2.1",
     "express-session": "^1.15.5",
     "mysql": "^2.14.1",
