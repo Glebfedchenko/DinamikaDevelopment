@@ -1,3 +1,10 @@
-const b = new Buffer(100);
-b.write(1,2,3,4,5,6,7,8,9,10);
-console.log(b.toString());
+const buff = Buffer.alloc(100);
+var str = '';
+
+for (var n = 0; n < 100; n++) {
+    str += n.toString();
+}
+
+myBuffer.write(str,0);
+
+console.log('Buff: ', buff.toString());
