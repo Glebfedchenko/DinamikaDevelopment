@@ -1,8 +1,7 @@
 var fs = require('fs');
-const a = 'Hello World';
-a === process.argv[2];
+const a = process.argv;
 
-fs.writeFile('test.txt',a,function(err){
+fs.writeFile('test.txt',a.join('GOGOGOG '),function(err){
     if(err){
         console.log('Something went wrong')
     }
